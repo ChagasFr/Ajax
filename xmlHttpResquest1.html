@@ -30,6 +30,7 @@
             xher.send()
         }
 
+        // objetos do estado em linhas da tabela => celulas em linhas 
         function criarTabela(estados) {
             const linhas = estados.map(estado => {
                 const tdId = document.createElement('td')
@@ -43,6 +44,7 @@
 
                 const tr = document.createElement('tr')
 
+                // retornando
                 tr.appendChild(tdId)
                 tr.appendChild(tdNome)
                 tr.appendChild(tdSigla)
@@ -50,6 +52,7 @@
                 return tr
             })
 
+            // adicionando elementos
             const tabela = document.createElement('table')
             linhas.forEach(linha => tabela.appendChild(linha))
             document.body.appendChild(tabela)
