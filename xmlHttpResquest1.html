@@ -64,12 +64,11 @@
             metodo: "get",
             sucesso(resposta) {
                 const estados = JSON.parse(resposta)
-
-                const linhas = estados.map(estados => {
-                    // transmando um array em outro utilizando o map
-                    const tdId = document.createElement('td')
-                    tdId.innerHTML = estado.id
-                }) 
+                criarTabela(estados)
+            },
+            erro(e) {
+                const msg = document.createTextNode(`${e.codigo}: ${e.texto}`)
+                document.body.appendChild(msg)
             }
         })
     </script>
